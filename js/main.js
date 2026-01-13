@@ -96,14 +96,19 @@
             const faqItem = this.parentElement;
             const isActive = faqItem.classList.contains('active');
             
-            // Fermer tous les autres items
+            // Fermer tous les autres items et mettre à jour aria-expanded
             document.querySelectorAll('.faq-item').forEach(item => {
                 item.classList.remove('active');
+                const btn = item.querySelector('.faq-question');
+                if (btn) {
+                    btn.setAttribute('aria-expanded', 'false');
+                }
             });
             
             // Ouvrir l'item cliqué s'il n'était pas déjà ouvert
             if (!isActive) {
                 faqItem.classList.add('active');
+                this.setAttribute('aria-expanded', 'true');
             }
         });
     });
@@ -213,11 +218,6 @@
             answer.setAttribute('id', `faq-answer-${index}`);
             answer.setAttribute('role', 'region');
         }
-
-        question.addEventListener('click', function() {
-            const isExpanded = this.getAttribute('aria-expanded') === 'true';
-            this.setAttribute('aria-expanded', !isExpanded);
-        });
     });
 
     // ===================================
@@ -258,6 +258,12 @@
 
         // Vérifier les animations au chargement
         setTimeout(checkScrollAnimations, 100);
+
+        // Mettre à jour l'année dans le footer
+        const yearElement = document.getElementById('current-year');
+        if (yearElement) {
+            yearElement.textContent = new Date().getFullYear();
+        }
 
         console.log('GoodHabit Landing Page initialisée avec succès! 🎉');
     }

@@ -1,0 +1,473 @@
+/* ===================================
+   Responsive Design - Mobile First
+   =================================== */
+
+/* Tablettes et petits écrans (max-width: 992px) */
+@media screen and (max-width: 992px) {
+    /* Typographie */
+    html {
+        font-size: 17px;
+    }
+    
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    h3 { font-size: 1.5rem; }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .section-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    /* Hero Section */
+    .hero-content {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .hero-image {
+        order: -1;
+    }
+    
+    /* Features */
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-md);
+    }
+    
+    /* Benefits */
+    .benefits-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+    
+    /* Testimonials */
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+    
+    /* Footer */
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-md);
+    }
+    
+    /* CTA Buttons */
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .cta-buttons .btn {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+/* Smartphones et petits écrans (max-width: 768px) */
+@media screen and (max-width: 768px) {
+    /* Variables d'espacement */
+    :root {
+        --spacing-md: 1.5rem;
+        --spacing-lg: 2rem;
+        --spacing-xl: 3rem;
+        --spacing-xxl: 4rem;
+    }
+    
+    /* Typographie */
+    html {
+        font-size: 16px;
+    }
+    
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.75rem; }
+    
+    .section-title {
+        font-size: 1.75rem;
+    }
+    
+    /* Container */
+    .container {
+        padding: 0 var(--spacing-sm);
+    }
+    
+    /* Navigation */
+    .menu-toggle {
+        display: flex;
+    }
+    
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background-color: var(--white);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: var(--shadow-md);
+        padding: var(--spacing-md) 0;
+        gap: 0;
+    }
+    
+    .nav-menu.active {
+        left: 0;
+    }
+    
+    .nav-menu li {
+        width: 100%;
+    }
+    
+    .nav-menu li a {
+        display: block;
+        padding: var(--spacing-sm) var(--spacing-md);
+        width: 100%;
+    }
+    
+    .nav-menu li a.btn {
+        margin: var(--spacing-sm) var(--spacing-md);
+        width: calc(100% - var(--spacing-lg));
+    }
+    
+    /* Menu toggle animation */
+    .menu-toggle.active span:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .menu-toggle.active span:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+    
+    /* Hero Section */
+    .hero {
+        padding: var(--spacing-xl) 0;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+    
+    .hero-buttons .btn {
+        width: 100%;
+    }
+    
+    /* Features */
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+    
+    .feature-card {
+        padding: var(--spacing-md);
+    }
+    
+    /* Benefits */
+    .benefit-item {
+        padding: var(--spacing-md);
+    }
+    
+    /* Testimonials */
+    .testimonial-card {
+        padding: var(--spacing-md);
+    }
+    
+    /* How It Works */
+    .step {
+        grid-template-columns: 60px 1fr;
+        gap: var(--spacing-sm);
+    }
+    
+    .step:not(:last-child)::after {
+        left: 30px;
+        top: 60px;
+    }
+    
+    .step-number {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+    
+    .step-content {
+        padding: var(--spacing-sm);
+    }
+    
+    .step-title {
+        font-size: 1.3rem;
+    }
+    
+    .step-description {
+        font-size: 1rem;
+    }
+    
+    /* FAQ */
+    .faq-question {
+        padding: var(--spacing-sm);
+        font-size: 1rem;
+    }
+    
+    .faq-answer p {
+        padding: 0 var(--spacing-sm) var(--spacing-sm);
+        font-size: 1rem;
+    }
+    
+    /* CTA Section */
+    .cta-title {
+        font-size: 1.75rem;
+    }
+    
+    .cta-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    /* Footer */
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+    
+    .footer {
+        padding: var(--spacing-lg) 0 var(--spacing-md);
+    }
+}
+
+/* Très petits écrans (max-width: 480px) */
+@media screen and (max-width: 480px) {
+    /* Typographie */
+    html {
+        font-size: 15px;
+    }
+    
+    h1 { font-size: 1.75rem; }
+    h2 { font-size: 1.5rem; }
+    h3 { font-size: 1.25rem; }
+    
+    .section-title {
+        font-size: 1.5rem;
+    }
+    
+    .section-subtitle {
+        font-size: 1rem;
+    }
+    
+    /* Espacements */
+    :root {
+        --spacing-sm: 0.75rem;
+        --spacing-md: 1rem;
+        --spacing-lg: 1.5rem;
+        --spacing-xl: 2rem;
+        --spacing-xxl: 3rem;
+    }
+    
+    /* Hero */
+    .hero-title {
+        font-size: 1.75rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .hero-note {
+        font-size: 1rem;
+    }
+    
+    /* Boutons */
+    .btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+    }
+    
+    .btn-large {
+        padding: 1rem 1.8rem;
+        font-size: 1rem;
+    }
+    
+    /* Features */
+    .feature-icon {
+        font-size: 3rem;
+    }
+    
+    .feature-title {
+        font-size: 1.25rem;
+    }
+    
+    /* Benefits */
+    .benefit-icon {
+        font-size: 2.5rem;
+    }
+    
+    /* Testimonials */
+    .testimonial-avatar {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .testimonial-text {
+        font-size: 1rem;
+    }
+    
+    /* How It Works */
+    .step {
+        grid-template-columns: 50px 1fr;
+    }
+    
+    .step:not(:last-child)::after {
+        left: 25px;
+    }
+    
+    .step-number {
+        width: 50px;
+        height: 50px;
+        font-size: 1.25rem;
+    }
+    
+    /* CTA */
+    .cta-title {
+        font-size: 1.5rem;
+    }
+    
+    .cta-subtitle {
+        font-size: 1rem;
+    }
+    
+    /* Social Links */
+    .social-link {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* Grands écrans (min-width: 1400px) */
+@media screen and (min-width: 1400px) {
+    .container {
+        max-width: 1320px;
+    }
+    
+    .hero-title {
+        font-size: 4rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.4rem;
+    }
+    
+    .section-title {
+        font-size: 3rem;
+    }
+}
+
+/* Mode paysage pour mobiles */
+@media screen and (max-height: 600px) and (orientation: landscape) {
+    .hero {
+        padding: var(--spacing-lg) 0;
+    }
+    
+    .hero-content {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .hero-image {
+        order: 0;
+    }
+    
+    section {
+        padding: var(--spacing-lg) 0;
+    }
+}
+
+/* Préférences utilisateur - Réduction des animations */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+/* Mode sombre - Support optionnel */
+@media (prefers-color-scheme: dark) {
+    /* Option pour future implémentation du mode sombre */
+    /* Laisser commenté pour ne pas affecter le design actuel */
+    /*
+    :root {
+        --white: #1a1a1a;
+        --light-bg: #2a2a2a;
+        --text-color: #e8e8e8;
+        --text-light: #b8b8b8;
+    }
+    */
+}
+
+/* Optimisation de l'impression */
+@media print {
+    .menu-toggle,
+    .download-cta,
+    .hero-buttons,
+    .cta-buttons,
+    .footer {
+        display: none;
+    }
+    
+    body {
+        font-size: 12pt;
+    }
+    
+    h1 { font-size: 24pt; }
+    h2 { font-size: 20pt; }
+    h3 { font-size: 16pt; }
+    
+    a {
+        text-decoration: underline;
+    }
+    
+    .feature-card,
+    .benefit-item,
+    .testimonial-card {
+        page-break-inside: avoid;
+    }
+}
+
+/* Accessibilité - Taille de texte augmentée */
+@media screen and (min-width: 1px) {
+    .large-text {
+        font-size: 1.2em;
+        line-height: 1.8;
+    }
+    
+    .large-text h1 { font-size: 4rem; }
+    .large-text h2 { font-size: 3rem; }
+    .large-text h3 { font-size: 2rem; }
+    .large-text p { font-size: 1.3rem; }
+    .large-text .btn { font-size: 1.2rem; }
+}
